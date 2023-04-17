@@ -1,4 +1,5 @@
 import List.ArrList;
+import List.ArrayStack;
 import List.SList;
 
 public class Main {
@@ -50,7 +51,7 @@ public class Main {
         */
 
         //단순연결리스트
-        SList<String> s = new SList<String>();
+        /*SList<String> s = new SList<String>();
         s.insertFront("orange");
         s.insertFront("apple");
         s.insertAfter("cherry", s.getHead().getNext());
@@ -72,6 +73,19 @@ public class Main {
         t.insertFront(100);
         t.insertAfter(300, t.getHead().getNext());
         t.print();
-        System.out.println("t.size() = " + t.size());
+        System.out.println("t.size() = " + t.size());*/
+
+        //스택
+        ArrayStack<String> stack = new ArrayStack<String>();
+        stack.push("apple");
+        stack.push("orange");
+        stack.push("cherry");
+        System.out.println(stack.peek());
+        stack.push("pear");
+        stack.print();
+        stack.pop();
+        System.out.println(stack.peek());
+        stack.push("grape");
+        stack.print();
     }
 }
