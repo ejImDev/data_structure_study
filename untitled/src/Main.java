@@ -1,4 +1,5 @@
 import List.ArrList;
+import List.ArrayQueue;
 import List.ArrayStack;
 import List.SList;
 
@@ -76,6 +77,7 @@ public class Main {
         System.out.println("t.size() = " + t.size());*/
 
         //스택
+        /*
         ArrayStack<String> stack = new ArrayStack<String>();
         stack.push("apple");
         stack.push("orange");
@@ -86,6 +88,34 @@ public class Main {
         stack.pop();
         System.out.println(stack.peek());
         stack.push("grape");
-        stack.print();
+        stack.print();*/
+
+        //배열 큐
+        ArrayQueue<String> queue = new ArrayQueue<String>();
+
+        queue.add("apple");
+        queue.add("orange");
+        queue.add("cherry");
+        queue.add("pear");
+        queue.print();
+        queue.remove();
+        queue.print();
+
+        queue.add("grape");
+        queue.print();
+        queue.remove();
+        queue.print();
+
+        queue.add("lemon");
+        queue.print();
+        queue.add("mango");
+        queue.print();
+        queue.add("lime");
+        queue.print();
+        queue.add("kiwi");
+        queue.print();
+
+        queue.remove();
+        queue.print();
     }
 }
