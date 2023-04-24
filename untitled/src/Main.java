@@ -1,7 +1,4 @@
-import List.ArrList;
-import List.ArrayQueue;
-import List.ArrayStack;
-import List.SList;
+import List.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -91,6 +88,7 @@ public class Main {
         stack.print();*/
 
         //배열 큐
+        /*
         ArrayQueue<String> queue = new ArrayQueue<String>();
 
         queue.add("apple");
@@ -116,6 +114,24 @@ public class Main {
         queue.print();
 
         queue.remove();
-        queue.print();
+        queue.print();*/
+
+        //리스트 큐
+        ListQueue<String> q = new ListQueue<String>();
+
+        q.add("apple");
+        q.add("orange");
+        q.add("cherry");
+        q.add("pear");
+        q.print();
+
+        q.remove();
+        q.print();
+        q.remove();
+        q.print();
+
+        q.add("grape");
+        q.print();
+
     }
 }
