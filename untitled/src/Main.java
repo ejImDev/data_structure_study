@@ -1,4 +1,5 @@
 import List.*;
+import SerchTree.BST;
 import Tree.BinaryTree;
 import Tree.Node;
 
@@ -137,6 +138,7 @@ public class Main {
         q.print();*/
 
         //이진트리 연산
+        /*
         Node n1 = new Node<>(100, null, null);
         Node n2 = new Node<>(200, null, null);
         Node n3 = new Node<>(300, null, null);
@@ -166,9 +168,10 @@ public class Main {
         t.postorder(t.getRoot());
         System.out.printf("\n레벨 순회 : ");
         t.levelorder(t.getRoot());
-        System.out.println();
+        System.out.println();*/
 
         //이진트리 isEqual()
+        /*
         Node n10 = new Node(100, null, null);
         Node n20 = new Node(200, null, null);
         Node n30 = new Node(300, null, null);
@@ -194,6 +197,26 @@ public class Main {
         BinaryTree t3 = new BinaryTree();
         t3.setRoot(t3.copy(t.getRoot()));
         System.out.printf("copy 테스트 : "+ BinaryTree.isEqual(t.getRoot(), t3.getRoot()));
+        System.out.println();*/
+
+        //탐색트리
+        BST t = new BST(500, "Apple");
+        
+        t.put(600, "Banana");
+        t.put(200, "Melon");
+        t.put(100, "Orange");
+        t.put(400, "Tangerine");
+        t.put(250, "Kiwi");
+        t.put(150, "Grape");
+        t.put(800, "Strawberry");
+        t.put(700, "Cherry");
+        t.put(50, "Pear");
+        t.put(350, "Lemon");
+        t.put(10, "Watermelon");
+        
+        t.print(t.root);
         System.out.println();
+        System.out.println("t.height() = " + t.height());
+        
     }
 }
