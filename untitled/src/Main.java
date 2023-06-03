@@ -1,11 +1,6 @@
-import AVL.AVL;
-import BinaryMinHip.BHeap;
-import BinaryMinHip.Entry;
-import BinaryMinHip.LinearProbing;
-import List.*;
-import SerchTree.BST;
-import Tree.BinaryTree;
-import Tree.Node;
+import HashTable.LinearProbing;
+import HashTable.QuadProbing;
+import HashTable.RandProbing;
 
 public class Main {
     public static void main(String[] args) {
@@ -277,7 +272,10 @@ public class Main {
 */
 
         //해시 테이블
-        LinearProbing t = new LinearProbing();
+        //LinearProbing t = new LinearProbing(); // 선형조사
+        //QuadProbing t = new QuadProbing(); // 이차 조사
+        RandProbing t = new RandProbing(); // 랜덤 조사
+
         t.put(25, "grape");
         t.put(37, "apple");
         t.put(18, "banana");

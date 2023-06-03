@@ -1,7 +1,7 @@
-package BinaryMinHip;
+package HashTable;
 
 public class LinearProbing<K,V> {
-    public final int M = 13;
+    public final int M = 13; // 테이블 크기
     public K[] a = (K[]) new Object[M]; // 해시테이블
     public V[] d = (V[]) new Object[M]; // key관련 데이터 저장
     private int hash(K key) {
