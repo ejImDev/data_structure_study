@@ -1,7 +1,4 @@
-import HashTable.DoubleProbing;
-import HashTable.LinearProbing;
-import HashTable.QuadProbing;
-import HashTable.RandProbing;
+import HashTable.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -272,7 +269,8 @@ public class Main {
         h.print();
 */
 
-        //해시 테이블
+        //해시 테이블 - 개방주소 방식
+        /*
         //LinearProbing t = new LinearProbing(); // 선형조사
         //QuadProbing t = new QuadProbing(); // 이차 조사
         //RandProbing t = new RandProbing(); // 랜덤 조사
@@ -301,5 +299,45 @@ public class Main {
             System.out.print("\t"+t.a[i]);
         }
         System.out.println();
+    */
+
+        //해시 테이블 - 폐쇄주소 방식
+        Chaining t = new Chaining();
+
+        t.put(25, "grape");
+        t.put(37, "apple");
+        t.put(18, "banana");
+        t.put(55, "cherry");
+        t.put(22, "mango");
+        t.put(35, "lime");
+        t.put(50, "orange");
+        t.put(63, "watermelon");
+
+        System.out.println("탐색 결과");
+        System.out.println("50의 데이터 = "+t.get(50));
+        System.out.println("63의 데이터 = "+t.get(63));
+        System.out.println("37의 데이터 = "+t.get(37));
+        System.out.println("22의 데이터 = "+t.get(22));
+        /*
+        t.put(71, "grape");
+        t.put(23, "apple");
+        t.put(73, "banana");
+        t.put(49, "cherry");
+        t.put(54, "mango");
+        t.put(89, "lime");
+        t.put(39, "orange");*/
+
+        System.out.println();
+        System.out.println("해시테이블");
+
+        for(int i=0; i<t.M; ++i){
+            System.out.print(String.format("%2d", i));
+            Chaining.Node x = t.a[i];
+            while (x!=null){
+                System.out.print("--> [" + x.getKey()+", "+x.getData()+"]");
+                x = x.next;
+            }
+            System.out.println();
+        }
     }
 }
