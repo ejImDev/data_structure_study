@@ -1,3 +1,4 @@
+import HashTable.DoubleProbing;
 import HashTable.LinearProbing;
 import HashTable.QuadProbing;
 import HashTable.RandProbing;
@@ -274,7 +275,8 @@ public class Main {
         //해시 테이블
         //LinearProbing t = new LinearProbing(); // 선형조사
         //QuadProbing t = new QuadProbing(); // 이차 조사
-        RandProbing t = new RandProbing(); // 랜덤 조사
+        //RandProbing t = new RandProbing(); // 랜덤 조사
+        DoubleProbing t = new DoubleProbing();
 
         t.put(25, "grape");
         t.put(37, "apple");
