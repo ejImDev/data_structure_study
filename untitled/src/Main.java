@@ -1,4 +1,5 @@
 import HashTable.*;
+import Sort.Selection;
 
 public class Main {
     public static void main(String[] args) {
@@ -302,7 +303,7 @@ public class Main {
     */
 
         //해시 테이블 - 폐쇄주소 방식
-        Chaining t = new Chaining();
+       /* Chaining t = new Chaining();
 
         t.put(25, "grape");
         t.put(37, "apple");
@@ -318,14 +319,14 @@ public class Main {
         System.out.println("63의 데이터 = "+t.get(63));
         System.out.println("37의 데이터 = "+t.get(37));
         System.out.println("22의 데이터 = "+t.get(22));
-        /*
+        *//*
         t.put(71, "grape");
         t.put(23, "apple");
         t.put(73, "banana");
         t.put(49, "cherry");
         t.put(54, "mango");
         t.put(89, "lime");
-        t.put(39, "orange");*/
+        t.put(39, "orange");*//*
 
         System.out.println();
         System.out.println("해시테이블");
@@ -338,6 +339,15 @@ public class Main {
                 x = x.next;
             }
             System.out.println();
+        }
+        */
+
+        //선택 정렬
+        String a[] = {"S", "E", "L", "E", "C", "T", "I", "O", "N", "S", "O", "R", "T"};
+        Selection.sort(a);
+        System.out.println(" 정렬 결과 : ");
+        for(int i=0; i<a.length; i++){
+            System.out.println(a[i] + " ");
         }
     }
 }
