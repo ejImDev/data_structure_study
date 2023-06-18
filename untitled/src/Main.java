@@ -1,4 +1,5 @@
 import HashTable.*;
+import Sort.Insertion;
 import Sort.Selection;
 
 public class Main {
@@ -343,11 +344,21 @@ public class Main {
         */
 
         //선택 정렬
+        /*
         String a[] = {"S", "E", "L", "E", "C", "T", "I", "O", "N", "S", "O", "R", "T"};
         Selection.sort(a);
         System.out.println(" 정렬 결과 : ");
         for(int i=0; i<a.length; i++){
             System.out.println(a[i] + " ");
+        }*/
+
+        //삽입 정렬
+        String a[] = {"I", "N", "S", "E", "R", "T", "I", "O", "N", "S", "O", "R", "T"};
+        Insertion.sort(a);
+        System.out.println(" 정렬 결과 : ");
+        for(int i=0; i<a.length; i++){
+            System.out.println(a[i] + " ");
         }
+
     }
 }
