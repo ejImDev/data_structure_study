@@ -1,6 +1,7 @@
 import HashTable.*;
 import Sort.Heap;
 import Sort.Insertion;
+import Sort.Merge;
 import Sort.Selection;
 
 public class Main {
@@ -372,8 +373,17 @@ public class Main {
         }*/
 
         //힙 정렬
+        /*
         String a[] = {" ", "H", "E", "A", "P", "S", "O", "R", "T", "T", "E", "X", "T", "S", "A", "M", "P", "P", "L", "E"};
         Heap.sort(a);
+        System.out.println(" 정렬 결과 : ");
+        for(int i=0; i<a.length; i++){
+            System.out.print(a[i] + " ");
+        }*/
+
+        //합병 정렬
+        String a[] = {"M", "E", "R", "G", "E", "S", "O", "R", "T", "T", "E", "X", "T", "S", "A", "M", "P", "P", "L", "E"};
+        Merge.sort(a);
         System.out.println(" 정렬 결과 : ");
         for(int i=0; i<a.length; i++){
             System.out.print(a[i] + " ");
