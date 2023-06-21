@@ -382,7 +382,16 @@ public class Main {
         }*/
 
         //합병 정렬
+        /*
         String a[] = {"M", "E", "R", "G", "E", "S", "O", "R", "T", "T", "E", "X", "T", "S", "A", "M", "P", "P", "L", "E"};
+        Merge.sort(a);
+        System.out.println(" 정렬 결과 : ");
+        for(int i=0; i<a.length; i++){
+            System.out.print(a[i] + " ");
+        }*/
+
+        //퀵 정렬
+        String a[] = {"Q", "U", "I", "C", "K", "S", "O", "R", "T", "T", "E", "X", "T", "S", "A", "M", "P", "P", "L", "E"};
         Merge.sort(a);
         System.out.println(" 정렬 결과 : ");
         for(int i=0; i<a.length; i++){
