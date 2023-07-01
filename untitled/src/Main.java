@@ -1,3 +1,4 @@
+import Grape.BFS;
 import Grape.DFS;
 import Grape.Edge;
 import HashTable.*;
@@ -466,6 +467,11 @@ public class Main {
         //DFS
         System.out.println(" DFS 방문순서 : ");
         DFS d = new DFS(adjList);
+        System.out.println();
+
+        //BFS
+        System.out.println(" BFS 방문순서 : ");
+        BFS b = new BFS(adjList);
         System.out.println();
         
     }
