@@ -1,6 +1,7 @@
 import Grape.BFS;
 import Grape.DFS;
 import Grape.Edge;
+import Grape.TopologicalSort;
 import HashTable.*;
 import Sort.Heap;
 import Sort.Insertion;
@@ -404,8 +405,11 @@ public class Main {
         for(int i=0; i<a.length; i++){
             System.out.print(a[i] + " ");
         }*/
-        
-        //그래프 초기 셋팅
+
+
+        //BFS, DFS
+        /*
+        // 그래프 초기 셋팅
         int N = 10;
         List<Edge>[] adjList = new List[N];
         adjList[0] = new LinkedList<>();
@@ -472,7 +476,29 @@ public class Main {
         //BFS
         System.out.println(" BFS 방문순서 : ");
         BFS b = new BFS(adjList);
-        System.out.println();
-        
+        System.out.println();*/
+
+        //위상정렬
+        int N = 9;
+        List<Integer>[] adjList = new List[N];
+        for (int i=0; i<N; i++){
+            adjList[i] = new LinkedList<>();
+        }
+        adjList[2].add(0);
+        adjList[2].add(1);
+        adjList[0].add(1);
+        adjList[1].add(3);
+        adjList[1].add(4);
+        adjList[4].add(5);
+        adjList[5].add(3);
+        adjList[5].add(7);
+        adjList[3].add(6);
+        adjList[6].add(7);
+        adjList[7].add(8);
+
+        TopologicalSort t = new TopologicalSort(adjList);
+        List<Integer> sortedSeq = t.tsort();
+        System.out.printf(" 위상 정렬 : \n ");
+        System.out.println(sortedSeq);
     }
 }
