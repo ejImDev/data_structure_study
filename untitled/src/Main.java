@@ -1,7 +1,4 @@
-import Grape.BFS;
-import Grape.DFS;
-import Grape.Edge;
-import Grape.TopologicalSort;
+import Grape.*;
 import HashTable.*;
 import Sort.Heap;
 import Sort.Insertion;
@@ -479,6 +476,7 @@ public class Main {
         System.out.println();*/
 
         //위상정렬
+        /*
         int N = 9;
         List<Integer>[] adjList = new List[N];
         for (int i=0; i<N; i++){
@@ -499,6 +497,44 @@ public class Main {
         TopologicalSort t = new TopologicalSort(adjList);
         List<Integer> sortedSeq = t.tsort();
         System.out.printf(" 위상 정렬 : \n ");
-        System.out.println(sortedSeq);
+        System.out.println(sortedSeq);*/
+
+        int[][] weight = {
+                {0, 9, 10, 0, 0, 0, 0},
+                {9, 0, 0, 10, 5, 0, 3},
+                {0, 0, 0, 9, 7, 2, 0},
+                {0, 10, 9, 0, 0, 4, 8},
+                {0, 5, 7, 0, 0, 0, 1},
+                {0, 0, 2, 4, 0, 0, 6},
+                {0, 3, 0, 8, 1, 6, 0},
+        };
+        int N = weight.length;
+        int M = 0; // 그래프 간선의 수
+        List<GreedyEdge>[] adjList = new List[N];
+        for(int i=0; i<N; i++){
+            adjList[i] = new LinkedList<>();
+            for(int j=0; j<N; j++){
+                if(weight[i][j] != 0){
+                    GreedyEdge e = new GreedyEdge(i,j,weight[i][j]);
+                    adjList[i].add(e);
+                    M++;
+                }
+            }
+        }
+
+        KruskalMST k = new KruskalMST(adjList, M); // KruskalMST 객체 생성
+        GreedyEdge[] tree = new GreedyEdge[N-1]; // 최소신장트리의 간선을 출력하기 위해
+
+        System.out.print(" 최소신장트리 간선 : ");
+        tree = k.mst();
+
+        int sum = 0;
+        for(int i=0; i< tree.length; i++){
+            System.out.print("(" + tree[i].vertex + "," + tree[i].adjvertex+")");
+            sum += tree[i].weight;
+        }
+        System.out.println();
+        System.out.println();
+        System.out.println("최소신장트리의 간선 가중치 합 = " + sum);
     }
 }
